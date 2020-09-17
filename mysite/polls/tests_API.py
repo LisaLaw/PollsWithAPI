@@ -8,7 +8,7 @@ class QuestionTest(APITestCase):
     def setUp(self):
         self.question = Question()
 
-    def create_question_test(self):
+    def test_create_question(self):
         questions = Question.objects.all()
         data = {"question_text": "new question text"}
         response = self.client.post("api-root/questions/", data=data, format="json")
