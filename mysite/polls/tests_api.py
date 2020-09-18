@@ -19,3 +19,4 @@ class QuestionTest(APITestCase):
     def test_question_text_is_not_empty(self):
         question_text = Question('question_text') #get the question text for all questions
         self.assertIsNot(question_text, '') #checks that question text isn't empty
+        
