@@ -9,14 +9,12 @@ from django.contrib.auth.models import User
 class QuestionTest(APITestCase):
     def setUp(self):
         self.question = Question() #now I can use question as an instance of the Model Question
-        self.user = User(email="foo@bar.com") #create a user to prevent authorization error
-        password = 'pa$$wo3d'
-        self.user.set_password(password)
-        self.user.save()
+        #create a user to prevent authorization error
+        user = User.objects.create_user('john', 'lennon@thebeatles.com', 'johnpassword')
 
         #authenticate client with user
         self.client = Client()
-        self.client.login(email=self.user.email, password=password)
+        self.client.login(username=user.username, password='johnpassword')
 
     def test_question_is_created(self):
         questions = Question.objects.all().count() #get all Question instances and count them
