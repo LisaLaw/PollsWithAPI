@@ -1,9 +1,8 @@
 from django.urls import path, include
-from . import viewsets
+from . import views, viewsets
 from .viewsets import QuestionViewSet, UserViewSet, ResultsViewSet
 from rest_framework import renderers
 from rest_framework.routers import DefaultRouter
-from . import views
 
 router = DefaultRouter()
 router.register(r'questions', viewsets.QuestionViewSet)
