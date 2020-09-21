@@ -3,8 +3,5 @@ li a {
 }
 h1 {
     color: purple;
-}
-
-body {
-    background: white url("images/background.jpg") no-repeat;
+    font-size: larger;
 }
