@@ -21,7 +21,7 @@ class QuestionTest(APITestCase):
     def test_question_is_created(self):
         questions = Question.objects.all().count() #get all Question instances and count them
         data = {"question_text": "new question text"} #data that the new question has
-        response = self.client.post('/admin/', data=data, format="json") #user adds a questions in url "questions/" with the question text form above. Get back the result in json
+        response = self.client.post('/questions/', data=data, format="json") #user adds a questions in url "questions/" with the question text form above. Get back the result in json
         self.assertEqual(response.status_code, status.HTTP_201_CREATED) #check if status code of the new question equals 201
         self.assertEqual(questions + 1, Question.objects.all().count()) #check if all Question instances have augmented by 1 (a new question has been created)
 
