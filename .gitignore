@@ -7,3 +7,4 @@ mysite/polls/migrations/0004_question_owner.py
 mysite/sqlite3.exe
 newkey
 newkey.pub
+mysite/mysite/__pycache__/urls.cpython-37.pyc
