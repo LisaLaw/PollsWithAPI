@@ -1,1 +1,9 @@
 __pycache__/
+.venv/
+mysite/db.sqlite3
+mysite/polls/migrations/0002_auto_20200918_1244.py
+mysite/polls/migrations/0003_remove_question_owner.py
+mysite/polls/migrations/0004_question_owner.py
+mysite/sqlite3.exe
+newkey
+newkey.pub
