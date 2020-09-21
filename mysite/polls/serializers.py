@@ -7,14 +7,14 @@ class QuestionSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Question
-        fields = ['url', 'id', 'question_text', 'pub_date', 'owner']
+        fields = ['id', 'question_text', 'pub_date', 'owner']
 
 class ChoiceSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
 
     class Meta:
         model = Choice
-        fields = ['url', 'id', 'choice_text', 'owner']
+        fields = ['id', 'choice_text', 'owner']
 
 class UserSerializer(serializers.ModelSerializer):
     questions = serializers.PrimaryKeyRelatedField(many=True, queryset=Question.objects.all())
